@@ -1,8 +1,8 @@
 node
 {
-    stage('Build')
+    stage('Checkout')
     {
-        echo "This is build"
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/abhilashchoudhary0001/demo.git']]])
     }
     
     stage('Test')
